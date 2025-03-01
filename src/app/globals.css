@@ -14,29 +14,149 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  margin: 0;
+  background-color: #f0f0f0;
+
+  span {
+    font-size: 18px;
+  }
+
 }
 
-body {
+/* body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
-* {
+/* * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
+} */
 
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+} */
+
+.toDoContainer {
+  background-color: aqua;
+  margin: 20px 0;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toDoText {
+  background-color: red;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Mobile-first grid system */
+.col-12 {
+  width: 100%;
+  /* Full width by default on mobile */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.col-6 {
+  width: 100%;
+  /* Full width by default on mobile */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.col-4 {
+  width: 100%;
+  /* Full width by default on mobile */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.col-3 {
+  width: 100%;
+  /* Full width by default on mobile */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  /* margin: -15px; */
+  /* Negative margin to offset padding */
+}
+
+.paper {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.paperTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* On screens larger than 768px (typical tablet/desktop breakpoint) */
+@media (min-width: 768px) {
+  .container {
+    width: 100%;
+  }
+
+  .col-12 {
+    width: 100%;
+  }
+
+  .col-6 {
+    width: 50%;
+    /* Half width on larger screens */
+  }
+
+  .col-4 {
+    width: 33.33%;
+    /* Half width on larger screens */
+  }
+
+  .col-3 {
+    width: 25%;
+  }
+}
+
+/* Optional - for larger screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
   }
 }
