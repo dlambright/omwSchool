@@ -66,8 +66,10 @@ export const LocationCards = () => {
                 <span>Staff</span>
                 {location.employees.map( ( employee ) => (
                   <div style={styles.employeeRowContainer}>
-                    <div style={styles.employeeImage}>
-                      <FontAwesomeIcon icon={faImagePortrait} />
+                    <div style={{ margin: '8px 8px 8px 0' }}>
+                      <div style={styles.employeeImage}>
+                        <FontAwesomeIcon icon={faImagePortrait} size="3x" />
+                      </div>
                     </div>
                     <span>{employee}</span>
                   </div>

@@ -1,7 +1,15 @@
+@font-face {
+  font-family: 'Mali';
+  src: url('/Mali-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 .burgerMenu {
   display: none;
 
-  @media (max-width: 807px) {
+  @media (max-width: 1030px) {
     display: block;
   }
 }
@@ -9,14 +17,32 @@
 .desktopMenu {
   display: none;
 
-  @media (min-width: 807px) {
+  @media (min-width: 1030px) {
     display: flex;
-    gap: 24px;
+    gap: 30px;
     justify-content: space-between;
     padding-right: 12px;
   }
+}
 
-  /* @media (max-width: 807px) {
-    display: none;
-  } */
+.headerLink {
+  color: #0C71C3;
+  font-size: 22px;
+  font-family: Mali;
+  transition: all 0.2s ease-in-out;
+  padding: 8px;
+
+  &:hover {
+    color: #095694;
+    background-color: #0C71C311;
+    text-shadow: 1px 1px 2px rgba(12, 113, 195, 0.2);
+    border-radius: 8px;
+  }
+}
+
+.mobileMenuLink {
+  color: #0C71C3;
+  font-size: 22px;
+  font-family: Mali;
+  margin-bottom: 12px;
 }

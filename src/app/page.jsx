@@ -1,8 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { OverviewCards } from './components/overviewCards';
-import { faImagePortrait } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { LocationCards } from './components/locationCards';
 
 // import globalStyles from "./globals.css";
