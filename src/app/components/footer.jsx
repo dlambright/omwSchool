@@ -1,6 +1,8 @@
 import '../globals.css';
 import '../page.module.css';
 import Image from 'next/image';
+import { ThemeHeader } from './themeHeader';
+import { ThemeText } from './themeText';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapLocation, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 const locationData = [
@@ -61,19 +63,26 @@ export const Footer = () => {
   return (
     <div style={{ background: 'linear-gradient(to bottom, #FF4D00, #f5f5f5)', padding: '0 0 30px 0' }}>
       <div className="container">
-        <h1 style={{ textAlign: 'center', color: 'white' }}>We'd love to hear from you! If you're interested in enrolling your child at On My Way Preschool, UT get in touch with us.</h1>
+        <ThemeHeader
+          text="We'd love to hear from you! If you're interested in enrolling your child at On My Way Preschool, UT get in touch with us."
+          color="white"
+        />
         <div className="row">
           {locationData.map( ( location ) => (
             <div key={location.title} className="col-4" >
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', margin: '8px', backgroundColor: '#ffffff88', padding: '10px', borderRadius: '10px' }}>
-                <h2 style={{ textAlign: 'center', marginTop: '2px' }}>{location.title}</h2>
+                <h2 style={{ textAlign: 'center', marginTop: '2px' }}>
+                  {location.title}
+                </h2>
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '8px', marginBottom: '8px' }}>
                   <div style={{ height: '20px', width: '20px' }}>
                     <FontAwesomeIcon icon={faMapLocation} size="10px" />
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '8px', marginBottom: '8px' }}>
                     <a href={location.mapsLink} target="_blank" rel="noopener noreferrer">
-                      <span>{location.address}</span>
+                      <ThemeText
+                        text={location.address}
+                      />
                     </a>
                   </div>
                 </div>
@@ -83,7 +92,11 @@ export const Footer = () => {
                     <FontAwesomeIcon icon={faPhone} size="10px" />
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '8px', marginBottom: '8px' }}>
-                    <span><a href={`tel:${location.phone}`}>{location.phone}</a></span>
+                    <a href={`tel:${location.phone}`}>
+                      <ThemeText
+                        text={location.phone}
+                      />
+                    </a>
                   </div>
                 </div>
 
@@ -92,7 +105,10 @@ export const Footer = () => {
                     <FontAwesomeIcon icon={faEnvelope} size="10px" />
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '8px', marginBottom: '8px' }}>
-                    <span><a href={`mailto:${location.email}`}>{location.email}</a></span>
+                    <a href={`mailto:${location.email}`}>
+                      <ThemeText
+                        text={location.email}
+                      /></a>
                   </div>
                 </div>
                 <h3>Business Hours</h3>

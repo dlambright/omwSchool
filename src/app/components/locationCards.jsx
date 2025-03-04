@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImagePortrait } from '@fortawesome/free-solid-svg-icons';
+import { ThemeHeader } from './themeHeader';
+import { ThemeText } from './themeText';
 
 const data = [
   {
@@ -50,7 +52,9 @@ export const LocationCards = () => {
       <div className="row">
         <div className="col-12">
           <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <h1>Our Locations</h1>
+            <ThemeHeader
+              text="Our Locations"
+            />
           </div>
         </div>
 
@@ -59,9 +63,9 @@ export const LocationCards = () => {
             <div className="col-4">
               <div className="paper">
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                  <h1 style={{ margin: '0px' }}>
-                    {location.title}
-                  </h1>
+                  <ThemeHeader
+                    text={location.title}
+                  />
                 </div>
                 <span>Staff</span>
                 {location.employees.map( ( employee ) => (
@@ -71,7 +75,9 @@ export const LocationCards = () => {
                         <FontAwesomeIcon icon={faImagePortrait} size="3x" />
                       </div>
                     </div>
-                    <span>{employee}</span>
+                    <ThemeText
+                      text={employee}
+                    />
                   </div>
                 ) )}
               </div>
