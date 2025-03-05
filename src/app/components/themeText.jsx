@@ -4,7 +4,13 @@ export const ThemeText = ( props ) => {
     <p
       style={{
         color,
-        fontSize: '1.2rem'
+        fontSize: '1.2rem',
+        fontFamily: 'var(--font-geist-sans)',
+        padding: '0px',
+        margin: '0 0 4px 0',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        maxWidth: '100%',
       }}
     >
       {text}

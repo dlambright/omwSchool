@@ -1,6 +1,7 @@
 import '../globals.css';
-import '../page.module.css';
+// import '../page.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ThemeHeader } from './themeHeader';
 import { ThemeText } from './themeText';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -70,16 +71,16 @@ export const Footer = () => {
         <div className="row">
           {locationData.map( ( location ) => (
             <div key={location.title} className="col-4" >
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', margin: '8px', backgroundColor: '#ffffff88', padding: '10px', borderRadius: '10px' }}>
-                <h2 style={{ textAlign: 'center', marginTop: '2px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', margin: '8px', backgroundColor: '#ffffff88', padding: '10px', borderRadius: '10px', overflow: 'hidden', textOverflow: 'ellipsis', }}>
+                <h2 style={{ textAlign: 'center', marginTop: '2px', fontFamily: 'var(--font-geist-sans)' }}>
                   {location.title}
                 </h2>
-                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '8px', marginBottom: '8px' }}>
-                  <div style={{ height: '20px', width: '20px' }}>
+                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '8px', marginBottom: '0px', overflow: 'hidden', textOverflow: 'ellipsis', width: '100%' }}>
+                  <div style={{ height: '20px', width: '20px', flexShrink: 0 }}>
                     <FontAwesomeIcon icon={faMapLocation} size="10px" />
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '8px', marginBottom: '8px' }}>
-                    <a href={location.mapsLink} target="_blank" rel="noopener noreferrer">
+                  <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '8px', marginBottom: '0px', overflow: 'hidden', textOverflow: 'ellipsis', width: '100%' }}>
+                    <a href={location.mapsLink} target="_blank" rel="noopener noreferrer" style={{ overflow: 'hidden', textOverflow: 'ellipsis', width: '100%' }}>
                       <ThemeText
                         text={location.address}
                       />
@@ -87,49 +88,51 @@ export const Footer = () => {
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '8px', marginBottom: '8px' }}>
-                  <div style={{ height: '20px', width: '20px' }}>
-                    <FontAwesomeIcon icon={faPhone} size="10px" />
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '8px', marginBottom: '8px' }}>
-                    <a href={`tel:${location.phone}`}>
+                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '8px', marginBottom: '0px', overflow: 'hidden', textOverflow: 'ellipsis', width: '100%' }}>
+                  <FontAwesomeIcon icon={faPhone} size="10px" style={{ flexShrink: 0 }} />
+                  <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '8px', marginBottom: '0px', overflow: 'hidden', textOverflow: 'ellipsis', width: '100%' }}>
+                    <a href={`tel:${location.phone}`} style={{ overflow: 'hidden', textOverflow: 'ellipsis', width: '100%' }}>
                       <ThemeText
                         text={location.phone}
                       />
                     </a>
                   </div>
                 </div>
-
-                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '8px', marginBottom: '8px' }}>
-                  <div style={{ height: '20px', width: '20px' }}>
-                    <FontAwesomeIcon icon={faEnvelope} size="10px" />
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', gap: '8px', marginBottom: '8px' }}>
-                    <a href={`mailto:${location.email}`}>
+                <a href={`mailto:${location.email}`} style={{ width: '100%' }}>
+                  <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '8px', marginBottom: '0px', overflow: 'hidden', textOverflow: 'ellipsis', width: '100%' }}>
+                    <FontAwesomeIcon icon={faEnvelope} size="10px" style={{ flexShrink: 0 }} />
+                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '8px', marginBottom: '0px', overflow: 'hidden', textOverflow: 'ellipsis', width: '100%' }}>
                       <ThemeText
                         text={location.email}
-                      /></a>
+                      />
+                    </div>
                   </div>
-                </div>
-                <h3>Business Hours</h3>
+                </a>
+                <h3 style={{ fontFamily: 'var(--font-geist-sans)' }}>Business Hours</h3>
                 {
                   location.businessHours.map( ( businessHours ) => (
-                    <span key={businessHours.dates}>{businessHours.dates}: {businessHours.times}</span>
+                    <ThemeText
+                      text={`${businessHours.dates}: ${businessHours.times}`}
+                    />
                   ) )
                 }
               </div>
             </div>
           ) )}
-          <div className="col-12" style={{ marginTop: '20px' }}>
-            <span>
-              Proud Member
-            </span>
+          <div className="col-3" />
+          <div className="col-3" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', margin: '8px', backgroundColor: '#ffffff88', padding: '10px', borderRadius: '10px', overflow: 'hidden', textOverflow: 'ellipsis', }}>
+            <Link href="https://www.bbb.org/us/ut/roy/profile/child-care-centers/on-my-way-preschool-daycare-llc-1166-90012789?utm_campaign=bbb_seal&utm_content=On%20My%20Way%20Preschool%20%26%20Daycare%2C%20LLC&utm_medium=website&utm_source=seal_click_90012789" target="_blank" rel="noopener noreferrer">
+              <Image src="/ab-seal-horizontal-blue.svg.webp" alt="Better Business Bureau" width={175} height={61} />
+              <ThemeText
+                text="BBB Rating: A+"
+              />
+            </Link>
           </div>
-          <div className="col-6">
-            <Image src="/ab-seal-horizontal-blue.svg.webp" alt="Better Business Bureau" width={200} height={100} />
-          </div>
-          <div className="col-6">
-            <Image src="/UPCCA-Logo-without-Words.webp" alt="UPCCA" width={200} height={100} />
+          <div className="col-3" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', margin: '8px', backgroundColor: '#ffffff88', padding: '10px', borderRadius: '10px', overflow: 'hidden', textOverflow: 'ellipsis', }}>
+            <Image src="/UPCCA-Logo-without-Words.webp" alt="UPCCA" width={61} height={61} />
+            <ThemeText
+              text="We are members of the UPCCA – Utah Professional Childcare Association"
+            />
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ export default function Home() {
         <div className="hero-container" style={{
           width: '100%',
           textAlign: 'center',
-          backgroundImage: 'linear-gradient(176deg, rgba(242, 189, 0, 0.56) 0%, rgba(142, 156, 85, 0.72) 38%, rgba(12, 113, 195, 0.79) 99%), url("/hero_kids.jpg")',
+          backgroundImage: 'linear-gradient(176deg, rgba(242, 189, 0, 0.56) 0%, rgba(142, 156, 85, 0.72) 38%, rgba(12, 113, 195, 0.79) 99%), url("/new_hero_kids.webp")',
           marginBottom: '20px',
           position: 'relative',
           overflow: 'hidden',
@@ -84,16 +84,26 @@ export default function Home() {
               <ThemeText
                 text="Welcome to On My Way Preschool & Daycare, where we are committed to providing top-notch preschool services and amenities to families in Pleasant View, Roy, and Clinton, UT. Our licensed and insured child care center has been a trusted part of the community since 1992, and we take pride in creating a safe and nurturing environment for children to learn and grow."
               />
-              <div style={{ textAlign: 'right' }}>
+              <div style={{ textAlign: 'center', marginTop: '8px' }}>
                 <ThemeButton
                   text="Contact Us"
-                // rightIcon={<FontAwesomeIcon icon={faArrowRight} />}
+                  rightIcon={<FontAwesomeIcon icon={faArrowRight} />}
                 />
               </div>
             </div>
             <div className="col-6">
               <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <Image src="/kids_crafts.jpg" alt="Kids playing" width={500} height={350} style={{ borderRadius: 15 }} />
+                <Image
+                  src="/new_kids_crafts.jpeg"
+                  alt="Kids playing"
+                  width={500}
+                  height={350}
+                  style={{
+                    borderRadius: 15,
+                    maxWidth: '100%',
+                    height: 'auto'
+                  }}
+                />
               </div>
 
             </div>
@@ -151,9 +161,11 @@ export default function Home() {
                 <ThemeHeader
                   text="We are a part of CACFP"
                 />
-                <ThemeButton
-                  text="Learn More"
-                />
+                <div style={{ textAlign: 'center', marginTop: '8px' }}>
+                  <ThemeButton
+                    text="Learn More"
+                  />
+                </div>
               </div>
               <div className="col-6">
                 <ThemeHeader
@@ -165,8 +177,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          <LocationCards />
+          <div style={{ marginTop: '8px' }}>
+            <LocationCards />
+          </div>
         </div>
       </main >
     </div >
